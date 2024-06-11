@@ -1,0 +1,7 @@
+chromadb
+flask
+flask-session
+gunicorn
+langchain
+sentence-transformers
+werkzeug
