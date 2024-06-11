@@ -1,5 +1,6 @@
 import chromadb
 from sentence_transformers import SentenceTransformer
+from app_init import app
 
 class ChromaDBIntegration:
     def __init__(self):
