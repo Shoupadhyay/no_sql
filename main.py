@@ -9,19 +9,14 @@ from gunicorn.app.base import BaseApplication
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
-# Configuring server-side session
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+from app_init import app
 
 from abilities import llm_prompt
 from flask import request, jsonify
 import os
 from langchain_integration import LangChainIntegration
 from sentence_transformers import SentenceTransformer
-import pinecone
-from langchain import LangChain
+from chroma_integration import ChromaDBIntegration
 
 @app.route("/")
 def root_route():
@@ -82,6 +77,11 @@ class StandaloneApplication(BaseApplication):
 
 
 # Do not remove the main function while updating the app.
+from app import initialize
+from app import *
+
 if __name__ == "__main__":
+    initialize()
     options = {"bind": "%s:%s" % ("0.0.0.0", "8080"), "workers": 4, "loglevel": "info"}
     StandaloneApplication(app, options).run()
+
