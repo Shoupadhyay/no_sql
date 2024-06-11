@@ -1,5 +1,6 @@
 from langchain import LangChain
 import os
+from app_init import app
 
 class LangChainIntegration:
     def __init__(self):
