@@ -1,4 +1,4 @@
-
+pysqlite3
 chromadb
 flask
 flask-session
