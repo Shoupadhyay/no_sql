@@ -6,4 +6,4 @@ gunicorn
 langchain
 sentence-transformers
 werkzeug
-pysqlite3-binary >= 0.4.0
+sqlite3 >= 3.39.5
