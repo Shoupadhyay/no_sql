@@ -6,4 +6,4 @@ gunicorn
 langchain
 sentence-transformers
 werkzeug
-sqlite3>= 3.39.5
+sqlite3>= 0.39.5
