@@ -1,4 +1,4 @@
-sqlite3>=3.35.9
+sqlite3
 
 chromadb
 flask
